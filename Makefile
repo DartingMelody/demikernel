@@ -47,6 +47,10 @@ demikernel-clean:
 	$(CARGO) clean && \
 	rm -f Cargo.lock
 
+demikernel-examples:
+	cd $(SRCDIR) && \
+	$(CARGO) build --examples $(BUILD) --features=$(DRIVER) $(CARGO_FLAGS)
+
 test: test-catnip
 
 test-catnip:
